@@ -18,7 +18,7 @@ const Home: NextPage = ({ posts }: any) => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to{" "}
-          <a href="https://kalammallah.vercel.app/">Sami's WIP Blog!</a>
+          <a href="https://kalammallah.vercel.app/">Sami&apos;s WIP Blog!</a>
         </h1>
 
         <p className={styles.description}>
