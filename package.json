@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.9",
-    "contentful": "^9.1.34",
+    "@apollo/client": "^3.7.5",
+    "contentful": "^9.3.0",
     "graphql": "^16.6.0",
-    "next": "12.2.5",
+    "next": "13.1.6",
+    "next-seo": "^5.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
