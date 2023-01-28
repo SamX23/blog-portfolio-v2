@@ -1,34 +1,35 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import styles from "../styles/Home.module.css";
+import { NextSeo } from "next-seo";
 
 const Home: NextPage = ({ posts }: any) => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Sami Kalammallah Personal Blog</title>
-        <meta
-          name="description"
-          content="A blog about a frontend master wannabe"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+      <NextSeo
+        title="Sami Kalammallah Personal Blog"
+        description="A blog about a frontend master wannabe."
+        additionalLinkTags={[
+          {
+            rel: "icon",
+            href: "favicon.ico",
+          },
+        ]}
+      />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main>
+        <h1>
           Welcome to{" "}
           <a href="https://kalammallah.vercel.app/">Sami&apos;s WIP Blog!</a>
         </h1>
 
-        <p className={styles.description}>
+        <p>
           Currently this page is still work in progress, kindly visit my{" "}
-          <code className={styles.code}>github</code> to see the progress
+          <code>github</code> to see the progress
         </p>
 
-        <div className={styles.grid}>
-          {posts.items.map((post: any) => (
-            <a key={post.id} href={post.slug} className={styles.card}>
+        <div>
+          {posts.items.map((post: any, idx: any) => (
+            <a key={idx} href={post.slug}>
               <h2>{post.title}</h2>
               <p>{post.description}</p>
             </a>
@@ -36,7 +37,7 @@ const Home: NextPage = ({ posts }: any) => {
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <a
           href="https://github.com/SamX23"
           target="_blank"
