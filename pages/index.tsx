@@ -1,21 +1,9 @@
 import type { NextPage } from "next";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { NextSeo } from "next-seo";
 
 const Home: NextPage = ({ posts }: any) => {
   return (
     <div>
-      <NextSeo
-        title="Sami Kalammallah Personal Blog"
-        description="A blog about a frontend master wannabe."
-        additionalLinkTags={[
-          {
-            rel: "icon",
-            href: "favicon.ico",
-          },
-        ]}
-      />
-
       <main>
         <h1>
           Welcome to{" "}
@@ -29,7 +17,7 @@ const Home: NextPage = ({ posts }: any) => {
 
         <div>
           {posts.items.map((post: any, idx: any) => (
-            <a key={idx} href={post.slug}>
+            <a key={idx} href={`/blog/${post.slug}`}>
               <h2>{post.title}</h2>
               <p>{post.description}</p>
             </a>
