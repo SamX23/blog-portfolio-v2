@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
 
 const Home: NextPage = ({ posts }: any) => {
+  useEffect(() => {
+    themeChange(false);
+  }, []);
+
   return (
-    <div>
+    <>
       <main>
-        <h1>
+        <h1 className="text-3xl font-bold underline">
           Welcome to{" "}
           <a href="https://kalammallah.vercel.app/">Sami&apos;s WIP Blog!</a>
         </h1>
@@ -23,6 +29,15 @@ const Home: NextPage = ({ posts }: any) => {
             </a>
           ))}
         </div>
+
+        <div className="flex gap-2">
+          <button data-set-theme="winter" className="btn btn-primary">
+            Winter
+          </button>
+          <button data-set-theme="night" className="btn btn-secondary">
+            Night
+          </button>
+        </div>
       </main>
 
       <footer>
@@ -34,7 +49,7 @@ const Home: NextPage = ({ posts }: any) => {
           Ngoding by Sami
         </a>
       </footer>
-    </div>
+    </>
   );
 };
 
